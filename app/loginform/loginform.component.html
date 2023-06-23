@@ -1,0 +1,36 @@
+
+
+   <body>
+    
+   <div class="text-center"> 
+    
+    <form [formGroup]="LoginForm" autocomplete="off">
+        <h2 >Login</h2>
+
+        <div class="p-fluid">
+            <div class="field">
+                <label>Roll Number</label>
+                <input pInputText formControlName="rollNumber" (input)="capitalizeRollNumber()" type="text" />
+                <div *ngIf="LoginForm.get('rollNumber').invalid && LoginForm.get('rollNumber').touched">
+                    
+                      Roll Number is required.
+        </div>
+            </div>
+ 
+            <div class="field">
+                <label>Password</label>
+                <input pInputText formControlName="password" type="password" />
+                <div *ngIf="LoginForm.get('password').invalid && LoginForm.get('password').touched">
+                    Password is required.</div>
+                
+            </div><br>
+            <p-button (onClick)="Submit()" label="Login" [disabled]="!LoginForm.valid"></p-button><br><br>
+            <!-- <div *ngIf="successMessage">{{ successMessage }}</div> -->
+            <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+            <small>New User ? <a routerLink="/reg" >Register</a></small>
+           
+        </div>     
+ 
+ </form>
+    </div> 
+</body> 

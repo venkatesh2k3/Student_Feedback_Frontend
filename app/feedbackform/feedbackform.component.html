@@ -1,0 +1,67 @@
+<body id="content">
+<div class="header"> <img src="https://dhondi.ai/logos/jntugv.png" class="imgg"><h3>JNTUGV COLLEGE OF ENGINEERING,VIZIANAGARAM(AUTONOMOUS)</h3>
+<h3 style="font-size:add_size" class="jaw">JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY GURAJADA,VIZIANAGARAM</h3>
+<h5>DWARAPUDI, VIZIANAGARAM, ANDHRA PRADESH - 535 003.</h5>
+<h6>(A constitute College of JNTUGV & Approved by AICTE, New Delhi) (Recognised by UGC under section 2(F) & 12(B) of UGC Act 1956) </h6>
+</div>
+<h3 class="std">STUDENT FEED-BACK REPORT</h3>
+<form [formGroup]="feedback">
+    <label>Academic Year: </label>
+    <input  class="yea" formControlName="acadamic_year" pInputText/>
+<!-- <p-calendar  view="year" dateFormat="yy"  formControlName="acadamic_year" placeholder="Academic Year" style="background-color:#DCDCDC; width:40px"></p-calendar> -->
+<label class="lab">Year: </label><input  class="yea" formControlName="Year" pInputText/>
+<label>Semester: </label><input formControlName="semester" pInputText/><br><br>
+<p-dropdown [options]="branchOpt"
+        formControlName="department"
+         placeholder="Select a Branch" ></p-dropdown>
+<p-dropdown [options]="hodOpt"
+         formControlName="hodname"
+          placeholder="Select a HOD" ></p-dropdown>        
+ <p-dropdown [options]="facultyOpt"
+        formControlName="faculty_name"
+         placeholder="Select a faculty" ></p-dropdown>
+  <p-dropdown [options]="subjectOpt" 
+        formControlName="Subject"
+         placeholder="Select a Subject" 
+         ></p-dropdown>
+        <br><br>
+   </form>
+
+ <p-table [value]="tableData" styleClass="p-datatable-striped" [tableStyle]="{'min-width': '10rem'}"> 
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Sl.No</th>
+          <th>Characteristics</th>
+          <th>Very Good</th>
+          <th>Good</th>
+          <th>Average</th>
+          <th>Below Average</th>
+          <th>Poor</th>
+          <!-- <th>Marks</th> -->
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-data> 
+    <tr> 
+      <td>{{data.SL_No}}</td>
+      <td>{{data.Characteristics}}</td>
+      
+      <td><input name="grading{{data.SL_No}}" type="radio" [(ngModel)]="data.Grade" value="Very Good" ></td>
+      <td><input name="grading{{data.SL_No}}" type="radio" [(ngModel)]="data.Grade" value="Good"></td>
+      <td><input name="grading{{data.SL_No}}" type="radio" [(ngModel)]="data.Grade" value="Average"></td>
+      <td><input name="grading{{data.SL_No}}" type="radio" [(ngModel)]="data.Grade" value="Below Average"></td>
+      <td><input name="grading{{data.SL_No}}" type="radio" [(ngModel)]="data.Grade" value="Poor"></td>
+      <!-- <td><input name="grading{{data.SL_No}}" type="radio" [(ngModel)]="data.Grade" value="Marks"></td> -->
+    </tr>
+  </ng-template>
+</p-table>
+<br>
+<!-- <div class="butt"> -->
+<!-- <p-button [disabled]="disabled() == true"  (click)="onSubmit()" >Submit</p-button> -->
+<!-- </div> -->
+</body>
+
+
+<div id="editor" style="text-align: center;">
+  <!-- <p-button label="Submit" (click)="Submit()" styleClass="p-button-rounded"></p-button> -->
+<p-button label="Submit and download" (onClick)="convertToPDF1()"  value="submit&download"></p-button>
+</div>

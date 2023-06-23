@@ -1,0 +1,50 @@
+
+body{
+  background-image: url('https://jntukucev.ac.in/wp-content/uploads/2020/03/banner_1.jpg');
+  background-size: cover;
+  padding: 160px;
+  background-repeat: no-repeat;
+  padding-top: 120px;
+  text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.mr-2 {
+  margin-right: 25px;
+}
+form{
+  text-align: center;
+  width: auto;
+  color: white;
+}
+.text-center
+{
+  opacity: 0.9;
+  padding: 50px 50px;
+  border-radius: 15px ;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+  width: auto;
+  height: auto;
+  background-color: #1234;
+}
+img {
+  float: left;
+}
+.div1{
+  margin-top: 30px;
+  height: 150px;
+  text-align: center;
+  background: lightyellow;
+  display: flex;
+}
+.div2{
+  text-align: center;
+  filter:brightness(10%) ;
+  height: 500px;
+}
+.error{
+  color: red;
+}

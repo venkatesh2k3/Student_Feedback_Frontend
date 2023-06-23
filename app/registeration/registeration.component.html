@@ -1,0 +1,89 @@
+<br>
+<br>
+
+<body>
+      
+    <div class="header">
+    <img src="https://dhondi.ai/logos/jntugv.png" width="150" height="150">
+    <h3>JAWAHARLAL NEHRU TECHNOLOGICAL UNIVERSITY GURAJADA, VIZIANAGARAM</h3>
+    <h2>STUDENT REGISTRATION</h2>
+    </div>
+    
+    <div class="divbody">
+    <form [formGroup]="registeration" class="text-center"><br><br> 
+
+    <div class="form-row">
+        <div class="form-column">     
+            <label>Roll Number: </label>
+            <input formControlName="Rollnumber" pInputText  (input)="capitalizeRollNumber()"><br><br>
+        </div>
+          
+        <div class="form-column">    
+            <label>Year: </label>
+            <p-dropdown [options]="yearOpt" formControlName="Year" placeholder="Select a Year"></p-dropdown><br><br>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="form-row">
+        <div class="form-column">
+            <label>Name: </label>
+            <input formControlName="Name" pInputText/><br><br>
+        </div>
+        <div class="form-column">
+            <label>Semester: </label>
+            <p-dropdown [options]="semesterOpt" formControlName="Semester" placeholder="Select a Semester"></p-dropdown><br><br>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="form-row">
+        <div class="form-column">
+            <label>Branch: </label>
+            <p-dropdown [options]="branchOpt" formControlName="Branch" placeholder="Select a Branch"></p-dropdown><br><br>
+        </div>
+        <div class="form-column">
+            <label>Gender: </label>
+            <p-radioButton value="male" formControlName="Gender" label="Male"> </p-radioButton>
+            <p-radioButton value="female" formControlName="Gender" label="Female"></p-radioButton>
+            <p-radioButton value="other" formControlName="Gender" label="Other"></p-radioButton><br><br>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="form-row">
+        <div class="form-column">   
+            <label>Address: </label>  
+            <textarea rows="5" cols="30" pInputTextarea formControlName="Address"></textarea><br><br> 
+        </div>
+        <div class="form-column">       
+            <label>Phoneno: </label>
+            <input formControlName="Phonenumber" pInputText><br><br> 
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="form-row">
+        <div class="form-column">
+            <label>Email: </label>
+            <input type="email" formControlName="Email" pInputText><br><br> 
+        </div>
+        <div class="form-column">
+            <label>Password: </label> <input type ="password" formControlName="Password" pInputText/><br><br> 
+            <!-- <label>ConfrmPassword:</label> <input type ="password" formControlName="ConfirmPassword" pInputText/><br><br>  -->
+        </div>
+    </div>
+    
+    <!-- <button type="submit">Submit</button>  -->
+    <p-button label="Register" (click)="Submit()" styleClass="p-button-rounded" [disabled]="!registeration.valid"></p-button><br>
+    <small>Already have an account?<a routerLink="/log" >Login</a></small>
+    <!-- </form> -->
+    <!-- </div>
+
+</body> -->
+      
+
